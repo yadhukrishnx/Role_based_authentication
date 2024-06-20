@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>LOGIN</h2>
+    <h2>REGISTER</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ userform.as_p }}
+        <input type="submit" value="Register">
+    </form>
     {% if messages %}
     {% for message in messages %}
         <div class="alert alert-success">
@@ -14,6 +19,7 @@
         </div>
     {% endfor %}  
 {% endif %}
-    <button><a href="{% url 'register' %}">REGISTER</button>
+    <button><a href="{% url 'login' %}">LOGIN</button>
+  
 </body>
 </html>
