@@ -24,7 +24,7 @@ def userRegistration(request):
         if logintable.password == logintable.password2:
             logintable.save()
             userprofile.save()
-            messages.info(request,'user created successfully')
+            messages.info(request,'user created successfully please login')
             return redirect('login')
         else:
             messages.info(request,'password not matched')
