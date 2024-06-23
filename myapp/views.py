@@ -55,6 +55,7 @@ def userRegistration(request):
     
     return render(request,'register.html')
 
+
 def home(request):
     user_name= request.session['username']
     return render(request,'home.html',{'user_name':user_name})
@@ -62,3 +63,8 @@ def home(request):
 def adminhome(request):
     
     return render(request,'adminhome.html')
+
+
+def logout(request):
+    request.session.flush()
+    return redirect('login')
